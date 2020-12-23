@@ -10,7 +10,7 @@ router.post('/logout', usersController.logout.post);
 // * POST /users/signup
 router.post('/signup', usersController.signup.post);
 // * get /users/userinfo
-// router.get('/userinfo', usersController.userinfo.get);
+router.get('/userinfo', usersController.userinfo.get);
 // // // * get /users/userinfoup
 // router.post('/userinfoup', usersController.userinfoup.post);
 // // // * get /recipe/resultrecipe
