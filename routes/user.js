@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { usersController,recipeController } = require('../controller');
+const { usersController } = require('../controller');
 
 // * POST /users/login
 router.post('/login', usersController.login.post);
@@ -10,9 +10,11 @@ router.post('/logout', usersController.logout.post);
 // * POST /users/signup
 router.post('/signup', usersController.signup.post);
 // * get /users/userinfo
-router.get('/userinfo', usersController.userinfo.get);
-// * get /recipe/resultrecipe
-router.get('/resultrecipe', recipeController.resultrecipe.get);
+// router.get('/userinfo', usersController.userinfo.get);
+// // // * get /users/userinfoup
+// router.post('/userinfoup', usersController.userinfoup.post);
+// // // * get /recipe/resultrecipe
+// router.get('/resultrecipe', usersController.resultrecipe.get);
 
 
 module.exports = router;

@@ -14,11 +14,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   resultRecipe.init({
+    id: {
+      type: DataTypes.NUMBER,
+      primaryKey: true,
+    },
     foodName: DataTypes.STRING,
     link: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'resultRecipe',
+    modelName: 'resultRecipes',
   });
   return resultRecipe;
 };
