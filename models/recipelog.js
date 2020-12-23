@@ -14,17 +14,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   recipeLog.init({
-    userId: DataTypes.INT,
+    id: {
+      type: DataTypes.NUMBER,
+      primaryKey: true,
+    },
+    userId: DataTypes.INTEGER,
     foodName: DataTypes.STRING,
     link : DataTypes.STRING,
   }, {
     sequelize,
-    modelName: 'recipeLog',
+    modelName: 'recipeLogs',
   });
-  recipeLog.associate = function(models) {
-    recipeLog.belongsTo(models.user, {
-      foreignKey: 'id'
-      })
-};
+//   recipeLog.associate = function(models) {
+//     recipeLog.belongsTo(models.user, {
+//       foreignKey: 'id'
+//       })
+// };
   return recipeLog;
 };
