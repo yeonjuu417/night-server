@@ -13,13 +13,12 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: user,
-          key: "id"
-        },
+        // references: {
+        //   model: user,
+        //   key: "id"
+        // },
         allowNull: false
       },
-    
       foodName: {
         type: Sequelize.STRING,
         allowNull: false

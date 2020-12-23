@@ -5,10 +5,9 @@ const logger = require('morgan');
 require("./models");
 const app = express();
 app.use(logger('dev'));
-const mainController = require("./controllers");
 const usersRouter = require('./routes/user');
 
-const port = 4000;//포트번호수정 !!!!!!!
+const port = 3001;//포트번호수정 !!!!!!!
 
 app.use(express.json());
 app.use(

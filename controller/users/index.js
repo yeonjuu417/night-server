@@ -4,5 +4,6 @@ module.exports = {
     signup : require('./signup'),
     userinfo: require('./userinfo'),
     userinfoup: require('./userinfoup'),
+    resultrecipe: require('./resultrecipe'),
   };
   
