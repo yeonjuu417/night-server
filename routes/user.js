@@ -12,11 +12,11 @@ router.post('/signup', usersController.signup.post);
 // * get /users/userinfo
 router.get('/userinfo', usersController.userinfo.get);
 // // // * get /users/userinfoup
-router.post('/userinfoup', usersController.userinfoup.post);
+router.get('/userinfoup', usersController.userinfoup.get);
 // // // * get /recipe/resultrecipe
-router.get('/resultrecipe', usersController.resultrecipe.get);
+//router.get('/resultrecipe', usersController.resultrecipe.get);
 // // // * post /users/saverecipe
-router.post('/saverecipe', usersController.saverecipe.post);
+//router.post('/saverecipe', usersController.saverecipe.post);
 
 
 module.exports = router;
