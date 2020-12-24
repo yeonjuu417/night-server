@@ -6,6 +6,7 @@ require("./models");
 const app = express();
 app.use(logger('dev'));
 const usersRouter = require('./routes/user');
+const socialsRouter = require('./routes/social');
 
 const port = 3001;//포트번호수정 !!!!!!!
 
@@ -30,5 +31,8 @@ app.use(session({
 }));
 
 app.use('/users', usersRouter);
+
+app.use('/socials', socialsRouter)
+
 app.listen(port); 
 module.exports = app;
