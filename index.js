@@ -8,12 +8,12 @@ app.use(logger('dev'));
 const usersRouter = require('./routes/user');
 const socialsRouter = require('./routes/social');
 
-const port = 3001;//포트번호수정 !!!!!!!
+const port = 3001;
 
 app.use(express.json());
 app.use(
   cors({
-    origin: true,
+    origin: "*",
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
   })
@@ -31,7 +31,6 @@ app.use(session({
 }));
 
 app.use('/users', usersRouter);
-
 app.use('/socials', socialsRouter)
 
 app.listen(port); 

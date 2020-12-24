@@ -1,4 +1,4 @@
-const { user,recipelog } = require('../../models');
+const { users,recipeLog } = require('../../models');
 
 module.exports = {
     get:async (req, res) => {
