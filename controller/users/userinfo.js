@@ -1,15 +1,15 @@
-const { users,recipeLog } = require('../../models');
+const { users,recipeLogs } = require('../../models');
 
 module.exports = {
     get:async (req, res) => {
         if(req.session.userId){
-            let userInfo = await user.findeOne({
+            let userInfo = await users.findeOne({
                 where : {id : req.session.userId}
             })
-            let recipeLog = await recipelog.findeAll({
+            let recipelog = await recipeLogs.findeAll({
                 where : {userId : req.session.userId}
             }) 
-            res.status(200).json({data: userInfo, Log : recipeLog})
+            res.status(200).json({data: userInfo, Log : recipelog})
         }else{
             res.status(401).send({message : 'Unauthorized'})
         }
