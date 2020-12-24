@@ -52,11 +52,9 @@ app.use(session({
     sameSite : 'none',
   }
 }));
-
 app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
-
 app.use(function (req, res, next) {
   res.setHeader(
     'Content-Security-Policy',
@@ -64,9 +62,7 @@ app.use(function (req, res, next) {
   );
   next();
 });
-
 app.use('/users', usersRouter);
 app.use('/socials', socialsRouter)
-
 app.listen(port); 
 module.exports = app;
