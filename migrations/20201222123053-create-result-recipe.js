@@ -8,6 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      foodImg: {
+        type: Sequelize.BLOB,
+        allowNull: false
+      },
       foodName: {
         type: Sequelize.STRING
       },
