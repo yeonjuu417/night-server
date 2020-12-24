@@ -6,9 +6,11 @@ require("./models");
 const app = express();
 const usersRouter = require('./routes/user');
 const socialsRouter = require('./routes/social');
+
 const csp = require('helmet-csp');
 const port = 3001;//포트번호수정 !!!!!!!
 const bodyParser = require('body-parser');
+
 
 app.use(express.json());
 
@@ -64,7 +66,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/users', usersRouter);
-
 app.use('/socials', socialsRouter)
 
 app.listen(port); 
