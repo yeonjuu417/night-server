@@ -1,3 +1,5 @@
+const { user } = require('../../models');
+
 module.exports = {
     post: async (req, res) => {
         const { email, password, username } = req.body;
@@ -10,12 +12,12 @@ module.exports = {
         if(isemail){
             res.status(409).send({message : "email exists"})
           }else{
-            let data = await user.create({
+           await user.create({
               email: email,
               password: password,
               username : username,
           },)
-          res.status(201).json({ data : data , message :"Sign successfully" })
+          res.status(201).json({ message :"Sign successfully" })
           }
     }
 }

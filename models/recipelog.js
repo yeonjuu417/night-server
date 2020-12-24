@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     userId: DataTypes.INTEGER,
+    foodImg: DataTypes.BLOB('LONG'),
     foodName: DataTypes.STRING,
     link : DataTypes.STRING,
   }, {
