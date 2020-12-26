@@ -6,7 +6,7 @@ module.exports = {
         if (!email || !password || !username) {
             res.status(422).send({ message: "insufficient parameters supplied" })
         }
-        let iseamil = await users.findOne({
+        const isemail = await users.findOne({
             where: { email: req.body.email }
         })
 	if(isemail){
