@@ -1,4 +1,4 @@
-const { users } = require('../../models');
+const { user } = require('../../models');
 
 
 module.exports = {// When login, send userInfo and recipeLog all information ... ? 
@@ -6,7 +6,7 @@ module.exports = {// When login, send userInfo and recipeLog all information ...
         //Get information from the database via email and password
         const {email,password} = req.body;
         const userInfo = await users.findOne({
-            where: {email,password},
+            where: {email:email,password:password},
         });
         if(!userInfo){ //Failed
             res.status(400).send({data: null, message : "not authorized"})
@@ -16,3 +16,4 @@ module.exports = {// When login, send userInfo and recipeLog all information ...
         }
     }
 }
+
