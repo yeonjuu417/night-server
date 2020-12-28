@@ -6,18 +6,19 @@ module.exports = {
         if (!email || !password || !username) {
             res.status(422).send({ message: "insufficient parameters supplied" })
         }
-        const isemail = await user.findOne({
+        const isemail = await users.findOne({
             where: { email: req.body.email }
         })
-        if(isemail){
+	if(isemail){
             res.status(409).send({message : "email exists"})
           }else{
-           await user.create({
+           await users.create({
               email: email,
               password: password,
               username : username,
           },)
           res.status(201).json({ message :"Sign successfully" })
           }
+	
     }
 }

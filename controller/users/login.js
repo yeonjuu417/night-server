@@ -5,7 +5,7 @@ module.exports = {// When login, send userInfo and recipeLog all information ...
     post: async (req, res) => {
         //Get information from the database via email and password
         const {email,password} = req.body;
-        const userInfo = await user.findOne({
+        const userInfo = await users.findOne({
             where: {email,password},
         });
         if(!userInfo){ //Failed

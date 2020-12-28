@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: true,
     methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true,
+    credentials: true
   })
 );
 app.use(session({
@@ -29,7 +29,9 @@ app.use(session({
     sameSite : 'none',
   }
 }));
-
+app.get('/', (req, res) => {
+  res.status(200).send('Success');
+});
 app.use('/users', usersRouter);
 
 app.use('/socials', socialsRouter)
