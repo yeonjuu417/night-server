@@ -1,14 +1,11 @@
-const { users } = require('../../models');
+const { user } = require('../../models');
 
 
 module.exports = {// When login, send userInfo and recipeLog all information ... ? 
     post: async (req, res) => {
         //Get information from the database via email and password
-	console.log(req.body);
         const {email,password} = req.body;
-	                console.log(email);
-            console.log(password);
-        const userInfo = await users.findOne({
+        const userInfo = await user.findOne({
             where: {email,password},
         });
         if(!userInfo){ //Failed
@@ -19,3 +16,4 @@ module.exports = {// When login, send userInfo and recipeLog all information ...
         }
     }
 }
+
