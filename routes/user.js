@@ -14,7 +14,7 @@ router.get('/userinfo', usersController.userinfo.get);
 // // // * get /users/userinfoup
 router.get('/userinfoup', usersController.userinfoup.get);
 // // // * get /recipe/resultrecipe
-//router.get('/resultrecipe', usersController.resultrecipe.get);
+router.get('/resultrecipe', usersController.resultrecipe.get);
 // // // * post /users/saverecipe
 //router.post('/saverecipe', usersController.saverecipe.post);
 

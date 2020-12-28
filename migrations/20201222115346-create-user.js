@@ -22,7 +22,7 @@ module.exports = {
       },
       userImg: {
         type: Sequelize.BLOB,
-        allowNull: false
+        
       },
       createdAt: {
         allowNull: false,

@@ -11,11 +11,17 @@ const socialsRouter = require('./routes/social');
 const port = 3001;//포트번호수정 !!!!!!!
 
 app.use(express.json());
+
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended : true }));
+app.use(logger('dev'));
+
 app.use(
   cors({
-    origin: true,
+    origin:  ['http://onemeal.xyz','https://onemeal.xyz'],
     methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true
+    credentials: true,
+
   })
 );
 app.use(session({
@@ -32,6 +38,7 @@ app.use(session({
 app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
+
 app.use('/users', usersRouter);
 
 app.use('/socials', socialsRouter)
