@@ -9,7 +9,7 @@ module.exports = {
             let recipelog = await recipeLogs.findeAll({
                 where : {userId : req.session.userId}
             }) 
-            res.status(200).json({data: userInfo, Log : recipelog})
+            res.status(200).json({data: userInfo, log : recipelog})
         }else{
             res.status(401).send({message : 'Unauthorized'})
         }
