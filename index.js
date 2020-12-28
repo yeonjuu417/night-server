@@ -14,15 +14,13 @@ const bodyParser = require('body-parser');
 
 app.use(express.json());
 
-app.use(bodyParser.json());
-
-app.use(express.urlencoded({extended : true }));
+app.use(express.urlencoded({extended : false  }));
 
 app.use(logger('dev'));
 
 app.use(
   cors({
-    origin: '*',
+    origin: ['http://onemeal.xyz','https://onemeal.xyz'],
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
   })
