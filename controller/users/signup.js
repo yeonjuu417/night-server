@@ -9,18 +9,16 @@ module.exports = {
         await users.findOne({
             where: { email: req.body.email }
         })
-        .then(data =>{
-            if(data){
-                res.status(409).send({message : "email exists"})
-              }else{
-               await users.create({
-                  email: email,
-                  password: password,
-                  username : username,
-              },)
-              res.status(201).json({ message :"Sign successfully" })
-              }
-        })
-        
+
+	if(isemail){
+            res.status(409).send({message : "email exists"})
+          }else{
+           await users.create({
+              email: email,
+              password: password,
+              username : username,
+          },)
+          res.status(201).json({ message :"Sign successfully" })
+          }
     }
 }
