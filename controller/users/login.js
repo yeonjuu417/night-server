@@ -1,4 +1,4 @@
-const { users } = require('../../models');
+const { user } = require('../../models');
 
 
 module.exports = {// When login, send userInfo and recipeLog all information ... ? 
@@ -16,3 +16,4 @@ module.exports = {// When login, send userInfo and recipeLog all information ...
         }
     }
 }
+
