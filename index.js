@@ -11,6 +11,14 @@ const socialsRouter = require('./routes/social');
 
 const port = 3001;//포트번호수정 !!!!!!!
 
+app.use(function(req, res, next){
+	if (!req.secure){
+		res.redirect("https://onemeal.site"+req.url);
+	}else{
+		next();
+	}
+});
+
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
 app.use(logger('dev'));
