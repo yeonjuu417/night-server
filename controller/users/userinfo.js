@@ -2,7 +2,7 @@ const { users,recipeLogs } = require('../../models');
 
 module.exports = {
     get:async (req, res) => {
-	    console.log(req.session.userId);
+	    console.log(req.session);
         if(req.session.userId){
             let userInfo = await users.findOne({
                 where : {id : req.session.userId}
