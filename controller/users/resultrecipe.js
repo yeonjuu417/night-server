@@ -4,7 +4,7 @@ module.exports = {
     post: async (req, res) => {
 	    console.log(req.body);
         const result = [];
-	    consol.log(req.body.ingredients);
+	    console.log(req.body.ingredients);
         const { potato, egg, rice, sesame, onion, tofu, spam, bread, gochujang, pork, chicken, tuna, flour, kimchi, nutella, pocachip } = req.body
 
         // if (egg && rice && spam && bread && chicken) {
