@@ -10,7 +10,6 @@ module.exports = {
       },
       foodImg: {
         type: Sequelize.BLOB,
-        allowNull: false
       },
       foodName: {
         type: Sequelize.STRING

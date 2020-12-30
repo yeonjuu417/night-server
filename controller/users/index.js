@@ -5,5 +5,6 @@ module.exports = {
     userinfo: require('./userinfo'),
     userinfoup: require('./userinfoup'),
     resultrecipe: require('./resultrecipe'),
+    saverecipe: require('./saverecipe')
   };
   

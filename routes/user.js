@@ -16,7 +16,7 @@ router.get('/userinfoup', usersController.userinfoup.get);
 // // // * get /recipe/resultrecipe
 router.get('/resultrecipe', usersController.resultrecipe.get);
 // // // * post /users/saverecipe
-//router.post('/saverecipe', usersController.saverecipe.post);
+router.post('/saverecipe', usersController.saverecipe.post);
 
 
 module.exports = router;
