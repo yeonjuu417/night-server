@@ -5,23 +5,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require("./models");
 const app = express();
-app.use(logger('dev'));
 const usersRouter = require('./routes/user');
 const socialsRouter = require('./routes/social');
 
 const port = 3001;//포트번호수정 !!!!!!!
 
-app.use(function(req, res, next){
-	if (!req.secure){
-		res.redirect("https://onemeal.site"+req.url);
-	}else{
-		next();
-	}
-});
-
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
-app.use(logger('dev'));
 app.use(cookieParser());
 
 app.use(
@@ -29,7 +20,6 @@ app.use(
     origin: 'https://onemeal.xyz',
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
-
   })
 );
 
@@ -47,12 +37,12 @@ app.use(session({
     sameSite : 'none',
   }
 }));
+
 app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
 
 app.use('/users', usersRouter);
-
 app.use('/socials', socialsRouter)
 
 app.listen(port); 

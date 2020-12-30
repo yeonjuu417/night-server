@@ -9,6 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       foodImg: {
+
         type: Sequelize.STRING,
         allowNull: false
       },
