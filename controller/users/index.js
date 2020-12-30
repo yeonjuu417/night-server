@@ -4,7 +4,8 @@ module.exports = {
     signup : require('./signup'),
     userinfo: require('./userinfo'),
     userinfoup: require('./userinfoup'),
+    userimgup: require('./userimgup'),
     resultrecipe: require('./resultrecipe'),
-    saverecipe: require('./saverecipe')
+    saverecipe: require('./saverecipe'),
   };
   

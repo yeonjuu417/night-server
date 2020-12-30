@@ -5,15 +5,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require("./models");
 const app = express();
-app.use(logger('dev'));
 const usersRouter = require('./routes/user');
 const socialsRouter = require('./routes/social');
 
 const port = 3001;//포트번호수정 !!!!!!!
 
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
-app.use(logger('dev'));
 app.use(cookieParser());
 
 app.use(
@@ -38,6 +37,7 @@ app.use(session({
     sameSite : 'none',
   }
 }));
+
 app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
