@@ -1,7 +1,7 @@
 const { resultRecipes } = require('../../models');
 
 module.exports = {
-    get: async (req, res) => {
+    post: async (req, res) => {
 	    console.log(req.body);
         const result = [];
 	    consol.log(req.body.ingredients);

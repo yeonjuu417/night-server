@@ -32,7 +32,7 @@ router.put('/userinfoup', usersController.userinfoup.put);
 // * post /users/userimgup
 router.put('/userimgup', upload.single('img'), usersController.userimgup.put);
 // * get /recipe/resultrecipe
-router.get('/resultrecipe', usersController.resultrecipe.get);
+router.post('/resultrecipe', usersController.resultrecipe.post);
 // * post /users/saverecipe
 router.post('/saverecipe', usersController.saverecipe.post);
 
