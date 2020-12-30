@@ -43,7 +43,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRouter);
-
 app.use('/socials', socialsRouter)
 
 app.listen(port); 

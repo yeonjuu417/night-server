@@ -36,6 +36,4 @@ router.get('/resultrecipe', usersController.resultrecipe.get);
 // * post /users/saverecipe
 router.post('/saverecipe', usersController.saverecipe.post);
 
-
-
 module.exports = router;
