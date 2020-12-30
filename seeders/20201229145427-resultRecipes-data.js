@@ -89,7 +89,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        foodImg: 'https://i.imgur.com/ryOIndN.jpg',
+        foodImg: 'https://i.imgur.com/Qdgt2ln.png',
         foodName: '배달의 민족',
         link: 'https://www.baemin.com/?NaPm=ct%3Dkja4c28m%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Dace82911e9f8aad6a7a417440489c0f1145ff071',
         createdAt: new Date(),
