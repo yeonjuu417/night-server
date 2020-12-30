@@ -2,9 +2,11 @@ const { resultRecipes } = require('../../models');
 
 module.exports = {
     get: async (req, res) => {
+	    console.log(req.body);
         const result = [];
+	    consol.log(req.body.ingredients);
         const { potato, egg, rice, sesame, onion, tofu, spam, bread, gochujang, pork, chicken, tuna, flour, kimchi, nutella, pocachip } = req.body
-console.log(req.body);
+
         // if (egg && rice && spam && bread && chicken) {
         //     let id = Math.floor(Math.random() * (6 - 1)) + 1;
         //     let result = await resultRecipes.findOne({
@@ -107,11 +109,11 @@ console.log(req.body);
         } 
         if(result.length === 0) {
             let result = await resultRecipes.findOne({ //배민링크
-                where: { id: 13 }
-            })
+               where: { id: 13 }
+           })
             res.send({data: result , message: "No recipe" })
         }
-        let i = Math.floor(Math.random() * (result.length - 0)) + 0;
+       let i = Math.floor(Math.random() * (result.length - 0)) + 0;
         res.send({data : result[i]})
     }
 }
