@@ -16,7 +16,7 @@ module.exports = {
         allowNull: false
       },
       foodImg: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: false
       },
       foodName: {
