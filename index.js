@@ -21,7 +21,6 @@ app.use(
     origin: 'https://onemeal.xyz',
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
-
   })
 );
 
@@ -44,7 +43,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRouter);
-
 app.use('/socials', socialsRouter)
 
 app.listen(port); 
