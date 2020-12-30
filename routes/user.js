@@ -10,7 +10,7 @@ const upload = multer({
     storage: multer.diskStorage({
       // set a localstorage destination
       destination: (req, file, cb) => {
-        cb(null, '../controller/users/userImg');
+        cb(null, './controller/users/userImg');
       },
       // convert a file name
       filename: (req, file, cb) => {

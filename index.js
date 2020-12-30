@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: 'https://onemeal.xyz',
-    methods: ['GET', 'POST', 'OPTIONS'],
+    methods: ['GET', 'POST','PUT' ,'OPTIONS'],
     credentials: true,
   })
 );
@@ -42,6 +42,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Success');
 });
 
+app.use('/userImg', express.static('./controller/users/userImg'));
 app.use('/users', usersRouter);
 app.use('/socials', socialsRouter)
 

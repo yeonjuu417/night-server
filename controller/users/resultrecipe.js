@@ -4,7 +4,7 @@ module.exports = {
     get: async (req, res) => {
         const result = [];
         const { potato, egg, rice, sesame, onion, tofu, spam, bread, gochujang, pork, chicken, tuna, flour, kimchi, nutella, pocachip } = req.body
-
+console.log(req.body);
         // if (egg && rice && spam && bread && chicken) {
         //     let id = Math.floor(Math.random() * (6 - 1)) + 1;
         //     let result = await resultRecipes.findOne({
