@@ -3,11 +3,11 @@ const { resultRecipes } = require('../../models');
 module.exports = {
     post: async (req, res) => {
 	    console.log(req.body);
-        const result = [];
+        let result = [];
 	    console.log(req.body.ingredients);
-        const { potato, egg, rice, sesame, onion, tofu, spam, bread, gochujang, pork, chicken, tuna, flour, kimchi, nutella, pocachip } = req.body
-
-        // if (egg && rice && spam && bread && chicken) {
+        // const { 'potato', 'egg', 'rice', 'sesame', 'onion', 'tofu', 'spam', 'bread', 'gochujang', 'pork', 'chicken', 'tuna', 'flour', 'kimchi', nutella, pocachip } = req.body
+        const { ingredients } = req.body;
+        // if ('egg' && 'rice' && 'spam' && 'bread' && 'chicken') {
         //     let id = Math.floor(Math.random() * (6 - 1)) + 1;
         //     let result = await resultRecipes.findOne({
         //         where: { id: id }//id:1~4
@@ -15,49 +15,49 @@ module.exports = {
         //     res.status(200).send({ data: result  })
         // } 
         
-        if (egg && sesame) {
+        if (ingredients.includes('egg') && ingredients.includes('sesame')) {
             let eggroll = await resultRecipes.findOne({
                 where: { id: 1 }
             })
             result.push(eggroll);
             //res.status(200).send({ data: result ,message : "eggroll"})
         }
-        if (egg && rice) {
+        if (ingredients.includes('egg') && ingredients.includes('rice')) {
             let eggrice = await resultRecipes.findOne({
                 where: { id: 2 }
             })
             result.push(eggrice);
             //res.status(200).send({ data: result,message : "eggrice" })
         } 
-        if (spam && egg && bread) {
+        if (ingredients.includes('spam') && ingredients.includes('egg') && ingredients.includes('bread')) {
             let spamsand = await resultRecipes.findOne({
                 where: { id: 3 }
             })
             result.push(spamsand)
             //res.status(200).send({ data: result ,message : "spamsand" })
         } 
-        if (spam && egg) {
+        if (ingredients.includes('spam') && ingredients.includes('egg')) {
             let spammayo = await resultRecipes.findOne({
                 where: { id: 4 }
             })
             result.push(spammayo)
             //res.status(200).send({ data: result ,message : "spammayo" })
         } 
-        if (chicken && egg) {
+        if (ingredients.includes('chicken') && ingredients.includes('egg')) {
             let chickenmayo = await resultRecipes.findOne({
                 where: { id: 5 }
             })
             result.push(chickenmayo)
             //res.status(200).send({ data: result,message : "chickenmayo" })
         } 
-        if (tofu && onion) {
+        if (ingredients.includes('tofu') && ingredients.includes('onion')) {
             let result = await resultRecipes.findOne({
                 where: { id: 6 }
             })
             result.push(tofufood)
             //res.status(200).send({ data: result ,message : "tofufood"})
         }
-        // } else if (gochujang && pork && kimchi) {
+        // } else if ('gochujang' && 'pork' && 'kimchi') {
         //     let id = Math.floor(Math.random() * (9 - 7)) + 7;
         //     let result = await resultRecipes.findOne({
         //         where: { id: id }//7~8
@@ -65,42 +65,42 @@ module.exports = {
         //     res.status(200).send({ data: result })
         // } 
         
-        if (gochujang && pork) {
+        if (ingredients.includes('gochujang') && ingredients.includes('pork')) {
             let bullgogi = await resultRecipes.findOne({
                 where: { id: 7 }
             })
             result.push(bullgogi)
             //res.status(200).send({ data: result ,message : "bullgogi"})
         } 
-        if (kimchi && pork) {
+        if (ingredients.includes('kimchi') && ingredients.includes('pork')) {
             let kimchistew = await resultRecipes.findOne({
                 where: { id: 8 }
             })
             result.push(kimchistew)
             //res.status(200).send({ data: result ,message : "kimchistew" })
         } 
-        if (potato && flour) {
+        if (ingredients.includes('potato') && ingredients.includes('flour')) {
             let potatopizza = await resultRecipes.findOne({
                 where: { id: 9 }
             })
             result.push(potatopizza)
             //res.status(200).send({ data: result ,message : "potatopizza"})
         } 
-        if (potato) {
+        if (ingredients.includes('potato')) {
             let hashbrown = await resultRecipes.findOne({
                 where: { id: 10 }
             })
             result.push(hashbrown)
             //res.status(200).send({ data: result ,message : "hashbrown"})
         } 
-        if (kimchi && flour) {
+        if (ingredients.includes('kimchi') && ingredients.includes('flour')) {
             let kimchipizza = await resultRecipes.findOne({
                 where: { id: 11 }
             })
             result.push(kimchipizza)
             //res.status(200).send({ data: result ,message : "kimchipizza" })
         } 
-        if (tuna && rice) {
+        if (ingredients.includes('tuna') && ingredients.includes('rice')) {
             let tunarice = await resultRecipes.findOne({
                 where: { id: 12 }
             })
@@ -113,7 +113,8 @@ module.exports = {
            })
             res.send({data: result , message: "No recipe" })
         }
-       let i = Math.floor(Math.random() * (result.length - 0)) + 0;
-        res.send({data : result[i]})
+    //    let i = Math.floor(Math.random() * (result.length - 0)) + 0;
+       console.log("리절트:" + JSON.stringify(result));
+        res.status(201).send({data : result})
     }
 }
