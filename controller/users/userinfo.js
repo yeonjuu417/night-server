@@ -18,6 +18,7 @@ module.exports = {
                         username: userInfo.username
                     },
                     log : {
+
                         foodName : recipelog.foodName,
                         foodImg : recipelog.foodImg,
                         link : recipelog.link,
