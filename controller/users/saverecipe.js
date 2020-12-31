@@ -7,12 +7,18 @@ module.exports = {
         if (!foodName || !foodImg || !link) {
             res.status(422).send({ message: "insufficient parameters supplied" })
         }
-        await recipeLogs.create({
-            userId : req.session.userId,
-            foodName: foodName,
-            foodImg: foodImg,
-            link: link,
+        let resave = recipeLogs.findOne({
+            where: { userId: req.session.userId, foodName: foodName }
         })
-        res.status(201).json({ message: "Save successfully" })
+        if (resave) {
+            res.status(409).send({ message: "recipe exists" })
+        } else {
+            await recipeLogs.create({
+                userId: req.session.userId,
+                foodName: foodName,
+                foodImg: foodImg,
+                link: link,
+            })
+        }
     }
 }
