@@ -18,9 +18,11 @@ module.exports = {
                         username: userInfo.username
                     },
                     log : {
-                        foodName : recipelog.foodName,  
+
+                        foodName : recipelog.foodName,
                         foodImg : recipelog.foodImg,
-                        link : recipelog.link                      
+                        link : recipelog.link,
+                        createdAt : recipelog.createdAt
                     }})
         }else{
             res.status(401).send({message : 'Unauthorized'})

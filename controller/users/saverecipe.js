@@ -8,6 +8,7 @@ module.exports = {
             res.status(422).send({ message: "insufficient parameters supplied" })
         }
         await recipeLogs.create({
+            userId : req.session.userId,
             foodName: foodName,
             foodImg: foodImg,
             link: link,
