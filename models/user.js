@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.NUMBER,
       primaryKey: true,
     },
-    userImg: DataTypes.BLOB('LONG'),
+    userImg: DataTypes.STRING,
     email: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING,

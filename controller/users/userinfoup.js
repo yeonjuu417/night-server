@@ -1,25 +1,30 @@
 const { users } = require('../../models');
+const user = require('../../models/user');
 
 module.exports = {
     put: async (req, res) => {
         const {username,password} = req.body
         // const {username,password,userImg} = req.body
-        if(username){
+        if(req.session.userId && username){
             await users.findOne({
-                where : {username : username}
+                where : {id : req.session.userId}
             })
             .then(data =>{
-                users.update({username : data.username},{where : {username : username}})
-                res.status(302).send()
+                users.update({username : username},{where : {id : req.session.userId}})
+                res.status(302).send({data: users.username})
+            }).catch(err => {
+                res.status(404).send({message: "user not found"});
             })
         }
-        if(password){
+        if(req.session.userId && password){
             await users.findOne({
-                where : {password : password}
+                where : {id : req.session.userId}
             })
             .then(data =>{
-                users.update({password : data.password},{where : {password : password}})
-                res.status(302).send()
+                users.update({password : password},{where : {id : req.session.userId}})
+                res.status(302).send({data: user.username})
+            }).catch(err => {
+                res.status(404).send({message: "user not found"});
             })
         }
         // if(userImg){
