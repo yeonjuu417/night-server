@@ -13,7 +13,6 @@ const port = 3001;//포트번호수정 !!!!!!!
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
-app.use(cookieParser());
 
 app.use(
   cors({
@@ -37,6 +36,8 @@ app.use(session({
     sameSite : 'none',
   }
 }));
+
+app.use(cookieParser('@codestates'));
 
 app.get('/', (req, res) => {
   res.status(200).send('Success');
