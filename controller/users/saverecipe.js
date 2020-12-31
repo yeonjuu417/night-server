@@ -10,9 +10,9 @@ module.exports = {
 	//    console.log(req.session.userId);
         await recipeLogs.create({
 		userId : req.session.userId,
-            foodName: foodName,
-            foodImg: foodImg,
-            link: link,
+            	foodName: foodName,
+           	foodImg: foodImg,
+            	link: link,
         })
         res.status(201).json({ message: "Save successfully" })
     }
