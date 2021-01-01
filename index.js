@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended : true }));
 app.use(
   cors({
     origin: 'https://onemeal.xyz',
-    methods: ['GET', 'POST','PUT' ,'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
   })
 );

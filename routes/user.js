@@ -35,5 +35,7 @@ router.put('/userimgup', upload.single('img'), usersController.userimgup.put);
 router.post('/resultrecipe', usersController.resultrecipe.post);
 // * post /users/saverecipe
 router.post('/saverecipe', usersController.saverecipe.post);
+// * delete /users/deleterecipe
+router.delete('/deleterecipe', usersController.deleterecipe.delete);
 
 module.exports = router;

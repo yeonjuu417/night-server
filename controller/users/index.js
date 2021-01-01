@@ -7,5 +7,6 @@ module.exports = {
     userimgup: require('./userimgup'),
     resultrecipe: require('./resultrecipe'),
     saverecipe: require('./saverecipe'),
+    deleterecipe: require('./deleterecipe'),
   };
   
