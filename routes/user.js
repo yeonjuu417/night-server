@@ -36,6 +36,6 @@ router.post('/resultrecipe', usersController.resultrecipe.post);
 // * post /users/saverecipe
 router.post('/saverecipe', usersController.saverecipe.post);
 // * delete /users/deleterecipe
-router.delete('/deleterecipe', usersController.deleterecipe.delete);
+router.post('/deleterecipe', usersController.deleterecipe.post);
 
 module.exports = router;
