@@ -1,7 +1,7 @@
 const { recipeLogs } = require('../../models');
 
 module.exports = {
-    delete: async (req, res) => {
+    post: async (req, res) => {
         const { userId } = req.session;
         const { id } = req.body;
         if (!userId) {
