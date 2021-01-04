@@ -51,7 +51,7 @@ module.exports = {
             // res.status(200).send({ data: chickenmayo, message : "chickenmayo" })
         } 
         if (ingredients.includes('tofu') && ingredients.includes('onion')) {
-            let result = await resultRecipes.findOne({
+            let tofufood = await resultRecipes.findOne({
                 where: { id: 6 }
             })
             result.push(tofufood)
