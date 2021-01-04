@@ -10,17 +10,17 @@ module.exports = {
         const resave = await recipeLogs.findOne({
             where: {foodName: foodName , userId : req.session.userId}
         });
-        console.log(resave)
 
-        if (resave) {
-            res.status(409).send({ message: "recipe exists" })
-        } else {
+        if (!resave) {
             await recipeLogs.create({
                 userId: req.session.userId,
                 foodName: foodName,
                 foodImg: foodImg,
                 link: link,
             })
+            res.status(200).send();
+        } else {
+            res.status(409).send({ message: "recipe exists" })
         }
     }
 }

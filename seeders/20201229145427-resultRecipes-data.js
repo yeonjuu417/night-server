@@ -42,7 +42,7 @@ module.exports = {
       {
         foodImg: 'https://i.imgur.com/qB6Ox9t.jpg',
         foodName: '두부조림',
-        link: 'https://www.youtube.com/watch?v=4-T3G_b4QK',
+        link: 'https://www.youtube.com/watch?v=4-T3G_b4QKo',
         createdAt: new Date(),
         updatedAt: new Date()
       },
